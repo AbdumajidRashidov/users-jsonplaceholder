@@ -1,0 +1,11 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    .textField{
+        border-radius: 5px;
+        background-color:#fff
+    }
+}
+

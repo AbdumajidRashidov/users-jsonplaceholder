@@ -1,0 +1,24 @@
+.dark-postcard{
+    background-color:#022546 !important;
+    color:white !important;
+    transition: all 0.2s linear !important;
+    box-shadow: 0 0 2px 0.2px #fff !important ;
+
+}
+.light-postcard{
+    background-color:#fff !important;
+    color:#022546 !important;
+    transition: all 0.2s linear !important;
+}
+.postsBody{
+    font-style: italic;
+}
+
+.dark-btn{
+    border:1px solid #022546 ;
+    color: #022546 
+}
+.light-btn{
+    box-shadow: 0 0 1px 0 #fff !important ;
+    color:#fff !important
+}

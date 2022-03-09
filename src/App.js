@@ -1,23 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { ThemeContext } from "./Context/themeContext";
+import { useContext } from "react";
+
+import "./App.scss";
+import Posts from "./pages/Posts/Posts";
+import Home from "./pages/Home/Home";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import { Grid } from "@mui/material";
+import Comments from "./pages/Comments/Comments";
+import Breadcrumb from "./Components/Breadcrumb/Breadcrumb";
+import { createTheme } from "@mui/material/styles";
+import AddPosts from "./pages/AddPosts/AddPosts";
 
 function App() {
+  const { theme } = useContext(ThemeContext);
+
+  const themeColor = createTheme({
+    palette: {
+      primary: {
+        light: "#fff",
+        main: "#3f50b5",
+        dark: "#022546",
+        contrastText: "#fff",
+      },
+    },
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Grid
+        container
+        className="container"
+        spacing={2}
+        bgcolor={
+          theme
+            ? themeColor.palette.primary.dark
+            : themeColor.palette.primary.light
+        }
+      >
+        <Grid
+          item
+          xs={3}
+          position={"sticky"}
+          top={"0"}
+          height={"100vh"}
+          boxShadow={theme ? "0 0 2px 0 white" : "0 0 2px 0 grey"}
         >
-          Learn React
-        </a>
-      </header>
+          <Sidebar />
+        </Grid>
+        <Grid item xs={9}>
+          <Breadcrumb></Breadcrumb>
+          <Routes>
+            <Route path="/" element={<Home></Home>}></Route>
+            <Route path="/posts">
+              <Route path=":userId" element={<Posts></Posts>}></Route>
+            </Route>
+          </Routes>
+          <Routes>
+            <Route
+              path="posts/:userId/:postId"
+              element={<Comments></Comments>}
+            ></Route>
+          </Routes>
+          <Routes>
+            <Route path="addpost" element={<AddPosts></AddPosts>}></Route>
+          </Routes>
+        </Grid>
+      </Grid>
     </div>
   );
 }

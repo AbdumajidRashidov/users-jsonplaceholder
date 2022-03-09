@@ -1,0 +1,9 @@
+@import './Assets/scss/normalize.scss'; 
+@import './Assets/scss/fonts.scss';
+@import './Assets/scss/generals.scss';
+@import './Assets/scss/variables.scss'; 
+
+
+.container{
+    transition: all 0.2s linear !important;
+}

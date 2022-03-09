@@ -1,0 +1,20 @@
+.dark-card{
+    background-color:#022546;
+    box-shadow: 0 0 2px 0.2px #fff !important ;
+    color:white;
+    transition: all 0.2s linear;
+}
+.light-card{
+    background-color:#fff;
+    color:#022546;
+    transition: all 0.2s linear;
+}
+.dark-text{
+    color:#022546;
+}
+.light-text{
+    color:#fff;
+}
+.comment_body{
+    font-style: italic;
+}
