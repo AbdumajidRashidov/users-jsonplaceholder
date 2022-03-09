@@ -55,25 +55,27 @@ export default function Home() {
 
   return (
     <>
-      {loading ? (
-        <Loader />
-      ) : (
-        data.length > 0 && (
-          <ul className="users">
-            {data.map((item) => {
-              return (
-                <UserCard
-                  key={item.id}
-                  id={item.id}
-                  name={item.name}
-                  ava={item.ava}
-                  email={item.email}
-                />
-              );
-            })}
-          </ul>
-        )
-      )}
+      <div>
+        {loading ? (
+          <Loader />
+        ) : (
+          data.length > 0 && (
+            <ul className="users">
+              {data.map((item) => {
+                return (
+                  <UserCard
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    ava={item.ava}
+                    email={item.email}
+                  />
+                );
+              })}
+            </ul>
+          )
+        )}
+      </div>
     </>
   );
 }

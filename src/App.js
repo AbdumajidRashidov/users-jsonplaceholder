@@ -55,7 +55,7 @@ function App() {
           <Sidebar />
         </Grid>
 
-        <Grid item xs={12} sm={8} marginLeft={2}>
+        <Grid item xs={12} sm={8}>
           <Breadcrumb></Breadcrumb>
           <Routes>
             <Route path="/*" element={<Home></Home>}></Route>

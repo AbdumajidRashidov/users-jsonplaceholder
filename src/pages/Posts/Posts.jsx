@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./Posts.scss";
 // components
 import Loader from "./../../Components/Loader/Loader";
 import PostsCard from "./../../Components/PostsCard/PostsCard";
@@ -22,17 +23,19 @@ export default function Posts() {
 
   return (
     <>
-      {loading ? (
-        <Loader />
-      ) : (
-        posts.length > 0 && (
-          <ul>
-            {posts.map((post) => {
-              return <PostsCard key={post.id} postData={post} />;
-            })}
-          </ul>
-        )
-      )}
+      <div>
+        {loading ? (
+          <Loader />
+        ) : (
+          posts.length > 0 && (
+            <ul className="posts-list">
+              {posts.map((post) => {
+                return <PostsCard key={post.id} postData={post} />;
+              })}
+            </ul>
+          )
+        )}
+      </div>
     </>
   );
 }

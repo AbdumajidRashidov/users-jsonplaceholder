@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./Comments.scss";
 import Loader from "./../../Components/Loader/Loader";
 import CommentsCard from "./../../Components/CommentsCard/CommentsCard";
 export default function Comments() {
@@ -25,7 +26,7 @@ export default function Comments() {
           <Loader />
         ) : (
           comments.length > 0 && (
-            <ul>
+            <ul className="comments-list">
               {comments.map((comment) => {
                 return <CommentsCard key={comment.id} comment={comment} />;
               })}
