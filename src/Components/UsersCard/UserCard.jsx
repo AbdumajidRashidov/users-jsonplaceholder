@@ -6,12 +6,7 @@ export default function UserCard({ id, ava, name }) {
   const userRef = useRef();
   return (
     <>
-      <li
-        key={id}
-        ref={userRef}
-        style={{ margin: "20px" }}
-        className="user-card"
-      >
+      <li key={id} ref={userRef} className="user-card">
         <Link to={`posts/${id}`}>
           <Card style={{ height: "200px", width: "200px" }}>
             <CardHeader
