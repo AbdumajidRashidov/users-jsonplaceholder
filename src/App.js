@@ -38,8 +38,10 @@ function App() {
         }
       >
         <Grid
+          className="GridSidebar"
           item
-          xs={3}
+          xs={12}
+          sm={3}
           position={"sticky"}
           top={"0"}
           height={"100vh"}
@@ -47,7 +49,8 @@ function App() {
         >
           <Sidebar />
         </Grid>
-        <Grid item xs={9}>
+
+        <Grid item xs={12} sm={9}>
           <Breadcrumb></Breadcrumb>
           <Routes>
             <Route path="/" element={<Home></Home>}></Route>
