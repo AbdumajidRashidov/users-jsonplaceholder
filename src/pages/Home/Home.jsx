@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "./Home.scss";
 //componets
 import UserCard from "../../Components/UsersCard/UserCard";
 import Loader from "./../../Components/Loader/Loader";
@@ -59,7 +59,7 @@ export default function Home() {
         <Loader />
       ) : (
         data.length > 0 && (
-          <ul>
+          <ul className="users">
             {data.map((item) => {
               return (
                 <UserCard

@@ -1,17 +1,29 @@
 import { Link } from "react-router-dom";
 import { Card, CardHeader, Avatar } from "@mui/material";
 import { useRef } from "react";
-export default function UserCard({ id, ava, name, email }) {
+import "./UserCard.scss";
+export default function UserCard({ id, ava, name }) {
   const userRef = useRef();
   return (
     <>
-      <li key={id} ref={userRef} style={{ width: "95%" }}>
+      <li
+        key={id}
+        ref={userRef}
+        style={{ margin: "20px" }}
+        className="user-card"
+      >
         <Link to={`posts/${id}`}>
-          <Card>
+          <Card style={{ height: "200px", width: "200px" }}>
             <CardHeader
-              avatar={<Avatar alt={name} src={ava} />}
+              style={{ display: "block", textAlign: "center" }}
+              avatar={
+                <Avatar
+                  sx={{ width: 72, height: 72, margin: "10px auto" }}
+                  alt={name}
+                  src={ava}
+                />
+              }
               title={name}
-              subheader={email}
             />
           </Card>
         </Link>

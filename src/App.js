@@ -58,10 +58,10 @@ function App() {
         <Grid item xs={12} sm={8} marginLeft={2}>
           <Breadcrumb></Breadcrumb>
           <Routes>
-            <Route path="/" element={<Home></Home>}></Route>
-            <Route path="/posts">
-              <Route path=":userId" element={<Posts></Posts>}></Route>
-            </Route>
+            <Route path="/*" element={<Home></Home>}></Route>
+          </Routes>
+          <Routes>
+            <Route path="/posts/:userId" element={<Posts></Posts>}></Route>
           </Routes>
           <Routes>
             <Route
