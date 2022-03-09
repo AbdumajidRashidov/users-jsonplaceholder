@@ -10,12 +10,14 @@ import {
 import { useRef } from "react";
 export default function Modal({ open, handleClose, dataId }) {
   const modalTextRef = useRef();
+  const modalEmailRef = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const data = {
       comment: modalTextRef.current.children[1].children[0].value,
+      email: modalEmailRef.current.children[1].children[0].value,
     };
 
     fetch(`${process.env.REACT_APP_API}/addcomment/${dataId}`, {
@@ -43,10 +45,18 @@ export default function Modal({ open, handleClose, dataId }) {
           <TextField
             ref={modalTextRef}
             required
-            autoFocus
             margin="dense"
-            label="Text"
+            label="Title"
             type="text"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            ref={modalEmailRef}
+            required
+            margin="dense"
+            label="Email"
+            type="email"
             fullWidth
             variant="standard"
           />

@@ -59,6 +59,7 @@ function App() {
           <Breadcrumb></Breadcrumb>
           <Routes>
             <Route path="/*" element={<Home></Home>}></Route>
+            <Route path="/addpost" element={<AddPosts></AddPosts>}></Route>
           </Routes>
           <Routes>
             <Route path="/posts/:userId" element={<Posts></Posts>}></Route>
@@ -68,9 +69,6 @@ function App() {
               path="posts/:userId/:postId"
               element={<Comments></Comments>}
             ></Route>
-          </Routes>
-          <Routes>
-            <Route path="addpost" element={<AddPosts></AddPosts>}></Route>
           </Routes>
         </Grid>
       </Grid>

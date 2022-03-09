@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
     .textField{
+        width: 50%;
         border-radius: 5px;
+        margin-bottom: 20px;
         background-color:#fff
     }
 }

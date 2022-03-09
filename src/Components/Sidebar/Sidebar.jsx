@@ -12,6 +12,7 @@ export default function Sidebar() {
 
   const { theme, setTheme } = useContext(ThemeContext);
   function handleChangeTheme() {
+    localStorage.setItem("theme", !theme);
     setTheme(!theme);
   }
 

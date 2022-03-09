@@ -3,11 +3,15 @@
     box-shadow: 0 0 2px 0.2px #fff !important ;
     color:white;
     transition: all 0.2s linear;
+    animation: fadeEffect 1s linear;
+
 }
 .light-card{
     background-color:#fff;
     color:#022546;
     transition: all 0.2s linear;
+    animation: fadeEffect 1s linear;
+
 }
 .dark-text{
     color:#022546;
@@ -17,4 +21,36 @@
 }
 .comment_body{
     font-style: italic;
+}
+@keyframes fadeEffect {
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0.2;
+    }
+    30%{
+        opacity: 0.3;
+    }
+    40%{
+        opacity: 0.4;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    60%{
+        opacity: 0.6;
+    }
+    70%{
+        opacity: 0.7;
+    }
+    80%{
+        opacity: 0.8;
+    }
+    90%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 1;
+    }
 }

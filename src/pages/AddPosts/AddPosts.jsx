@@ -2,17 +2,18 @@ import { useRef } from "react";
 import { TextFieldPost } from "../../Components/TextFields/TextField";
 import Button from "@mui/material/Button";
 import "./AddPosts.scss";
+import Markdown from "../../Components/Markdown/Markdown";
 export default function AddPosts() {
   const titleRef = useRef();
   const bodyRef = useRef();
   function handleSubmit(event) {
     event.preventDefault();
     // console.log(titleRef.current.children[0].children[0].value);
-    // console.log(bodyRef.current.children[0].children[0].value);
+    console.log(bodyRef.current.markdown);
 
     const data = {
       title: titleRef.current.children[0].children[0].value,
-      body: bodyRef.current.children[0].children[0].value,
+      body: bodyRef.current.source,
     };
 
     fetch(`${process.env.REACT_APP_API}/addpost`, {
@@ -34,11 +35,7 @@ export default function AddPosts() {
           className="textField"
           placeholder={"title"}
         ></TextFieldPost>
-        <TextFieldPost
-          ref={bodyRef}
-          className="textField"
-          placeholder={"type some text"}
-        ></TextFieldPost>
+        <Markdown reference={bodyRef}></Markdown>
         <Button
           style={{ marginTop: "15px", width: "150px" }}
           variant="outlined"
