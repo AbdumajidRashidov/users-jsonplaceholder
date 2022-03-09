@@ -46,6 +46,11 @@ function App() {
           top={"0"}
           height={"100vh"}
           boxShadow={theme ? "0 0 2px 0 white" : "0 0 2px 0 grey"}
+          bgcolor={
+            theme
+              ? themeColor.palette.primary.dark
+              : themeColor.palette.primary.light
+          }
         >
           <Sidebar />
         </Grid>
