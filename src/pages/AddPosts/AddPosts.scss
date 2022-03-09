@@ -9,3 +9,16 @@
     }
 }
 
+@media (max-width:"600px"){
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        height: calc(100vh - 300px);
+        .textField{
+            border-radius: 5px;
+            background-color:#fff
+        }
+    }
+}
